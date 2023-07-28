@@ -18,7 +18,6 @@ export const UserTechProvider = ({ children }) => {
             Authorization: `Bearer ${token}`,
           },
         });
-
         setRenderTech(response.data);
         setUser(response.data);
       } catch (error) {

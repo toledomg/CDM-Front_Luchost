@@ -13,17 +13,17 @@ export const UserTechAddProvider = ({ children }) => {
 
   const createTechProfile = async (data) => {
     const token = JSON.parse(localStorage.getItem("@CDM-Token"));
+    console.log(data);
     try {
       const response = await api.post("contacts", data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
+      console.log(response.data);
       setRenderTech([...renderTech, response.data]);
       setShowModalAdd(false);
-      toast.success(
-        `A Tecnologia ${response.data.title} foi cadastrada com sucesso`
-      );
+      toast.success(`Contato ${response.data.name} foi cadastrado com sucesso`);
     } catch (error) {
       console.log(error);
 

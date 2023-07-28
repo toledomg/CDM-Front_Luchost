@@ -25,14 +25,10 @@ export const formSchema = yup.object().shape({
     .required("Confirmar a senha é obrigatório.")
     .oneOf([yup.ref("password")], "Senhas não são iguais."),
 
-  bio: yup.string().required("Bio é obrigatório."),
-
-  contact: yup
+  phone: yup
     .string()
-    .url("Deve ser em formato de url")
-    .required("Linkedin é obrigatório."),
-
-  course_module: yup.string().required("Selecione 1 modulo por favor."),
+    .required("Telefone é Obrigatório.")
+    .matches(/.{11,}/, "Precisa conter no mínimo 11 caracteres"),
 });
 
 export const loginSchema = yup.object().shape({
@@ -41,6 +37,16 @@ export const loginSchema = yup.object().shape({
 });
 
 export const ModalEditSchema = yup.object().shape({
-  title: yup.string().required("Favor digite uma tecnologia"),
-  status: yup.string().required("Favor Selecionar um status"),
+  name: yup
+    .string()
+    .required("Favor Digitar um nome")
+    .matches(/(\D)/, "Não pode iniciar com número"),
+  email: yup
+    .string()
+    .required("E-mail é obrigatório.")
+    .email("E-mail inválido."),
+  phone: yup
+    .string()
+    .required("Telefone é Obrigatório.")
+    .matches(/.{11,}/, "Precisa conter no mínimo 11 caracteres"),
 });

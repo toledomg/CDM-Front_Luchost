@@ -44,7 +44,7 @@ function ModalAdd() {
               type="text"
               id="name"
               placeholder="Nome do Contato"
-              {...register("title")}
+              {...register("name")}
             />
             {errors.title?.message}
             <InputDefer
@@ -52,7 +52,7 @@ function ModalAdd() {
               type="text"
               id="email"
               placeholder="Email do Contato"
-              {...register("title")}
+              {...register("email")}
             />
             {errors.email?.message}
             <InputDefer
