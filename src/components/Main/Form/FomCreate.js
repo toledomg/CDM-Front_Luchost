@@ -64,7 +64,7 @@ export const FormCreate = styled.form`
     align-items: center;
 
     color: var(--color-gray-1);
-    background: var(--color-gray-2);
+    /* background: var(--color-gray-2); */
     border: none;
     border-radius: 4px;
 
