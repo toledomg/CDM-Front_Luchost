@@ -1,0 +1,24 @@
+Validação de senha com regex.
+
+      REGEX para:
+        Tamanho mínimo 6 e no máximo 15 caracteres.
+        Somente letras e numero e caractere especial(!#@$%&)
+        No mínimo uma letra maiúscula e minúscula.
+        No mínimo um numero.
+        No um mínimo caractere especial(!#@$%&)
+
+        ^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$
+
+      REGEX para: 
+        8 caracteres no mínimo
+        1 Letra Maiúscula no mínimo
+        1 Número no mínimo
+        1 Símbolo no mínimo: $*&@#
+        Não permitir sequência igual (aa, bb, 44, etc)
+
+        ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])(?:([0-9a-zA-Z$*&@#])(?!\1)){8,}$/i
+
+//
+
+Padrão de instalação de bibliotecas.
+yarn add axios react-icons react-router-dom react-scripts web-vitals react-toastify styled-components react-hook-form yup
