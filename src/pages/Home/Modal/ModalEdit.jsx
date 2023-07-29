@@ -6,6 +6,8 @@ import { ModalSection, ModalSectionTrash, FormEditTech } from "./style";
 import { BtnDefault, BtnMedium } from "../../../style/Global/Buttons";
 import SelectModalAdd from "../../../components/Main/Select/SelectModalAdd";
 
+import { yupResolver } from "@hookform/resolvers/yup";
+
 import { UserTechAddContext } from "../../../providers/UserTechAddContext";
 import { UserTechContext } from "./../../../providers/UserTechContext";
 import { ModalTechContext } from "./../../../providers/ModalTechContext";
@@ -21,8 +23,9 @@ function ModalEdit() {
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
-      title: attTech.title,
-      status: attTech.status,
+      name: attTech.name,
+      email: attTech.email,
+      phone: attTech.phone,
     },
   });
 
@@ -52,21 +55,22 @@ function ModalEdit() {
               label="Nome"
               type="text"
               id="name"
-              placeholder="Digite aqui o novo Nome"
+              placeholder="Novo Nome do Contato"
               {...register("name")}
             />
+            {/* {errors.name?.message} */}
             <InputDefer
               label="Email"
               type="text"
               id="email"
-              placeholder="Digite aqui o novo email"
+              placeholder="Novo Email do Contato"
               {...register("email")}
             />
             <InputDefer
               label="Telefone"
               type="text"
               id="phone"
-              placeholder="Digite aqui o novo Telefone"
+              placeholder="Novo Telefone do COntato"
               {...register("phone")}
             />
 

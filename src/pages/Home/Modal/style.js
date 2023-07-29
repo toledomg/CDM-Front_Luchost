@@ -15,7 +15,7 @@ export const ModalSection = styled.section`
 
   .containerModal {
     width: 369px;
-    height: 390px;
+    height: auto;
 
     display: flex;
     flex-direction: column;
@@ -27,6 +27,7 @@ export const ModalSection = styled.section`
     border-radius: 4px;
 
     gap: 20px;
+    padding-bottom: 20px;
   }
 
   ::backdrop {

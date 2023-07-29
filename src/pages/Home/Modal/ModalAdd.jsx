@@ -40,13 +40,13 @@ function ModalAdd() {
           </div>
           <FormEditTech onSubmit={handleSubmit(createTechProfile)}>
             <InputDefer
-              label="Name"
+              label="Nome"
               type="text"
               id="name"
               placeholder="Nome do Contato"
               {...register("name")}
             />
-            {errors.title?.message}
+            {errors.name?.message}
             <InputDefer
               label="Email"
               type="text"

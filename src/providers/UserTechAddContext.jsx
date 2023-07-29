@@ -46,9 +46,7 @@ export const UserTechAddProvider = ({ children }) => {
       ]);
 
       setShowModalEdit(false);
-      toast.success(
-        `A Tecnologia ${response.data.title} foi editada com sucesso`
-      );
+      toast.success(`O Contato ${response.data.name} foi editado com sucesso`);
     } catch (error) {
       console.log(error);
 
