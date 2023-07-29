@@ -5,7 +5,7 @@ export const StyledImageDiv = styled.div`
   z-index: 1;
   top: -10vw;
   right: -10vh;
-  opacity: 0.2;
+  opacity: 0.1;
   transform: rotate(-10deg);
 
   img {
