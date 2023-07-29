@@ -1,84 +1,91 @@
-# Desafio Full Stack M6/S01 - Projeto: CDM-Front (Customer Data Management)
+<h1 align="center"> Projeto: CDM-Front (Customer Data Management) </h1>
 
-### Links
+<h3 align="center"> 
+	🚀 Desafio Full Stack M6/S01
+</h3>
+
+## 💡 Introdução
+
+- O Objetivo do Projeto, foi criar uma aplicação onde o usuário pudesse fazer gestão de seus contatos.
+
+## 📚 Requisitos
+
+<details>
+
+<summary>Acesse</summary>
+
+#### Cadastro de Usuário do sistema;
+
+- Nome
+- Email
+- Telefone
+- Data de registro (data em que o cliente foi registrado)
+
+#### Cadastro de Contatos do Usuário;
+
+- Nome
+- Email
+- Telefone
+
+#### Tanto os clientes quanto os contatos devem ter as operações básicas de um CRUD;
+
+#### Um cliente poderá ter mais de um contato vinculado a ele;
+
+#### Um relatório (podendo ser em tela ou exportado em pdf) que mostre o cliente e seus contatos.
+
+</details>
+
+## 💫 Links
 
 - [Site DEMO](https://cdm.luchost.com/)
 
-- [Documentação](https://cdm-doc.luchost.com/)
-
 - API: `http://cdm-api.luchost.com`
 
-# Getting Started with Create React App
+## 🚚 Documentação API / Rotas da Aplicação
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Documentação](https://cdm-doc.luchost.com/)
 
-## Available Scripts
+### 🎲 Rodando o sistema
 
-Instal dependencies with:
+<Details>
 
-### `yarn`
+#### Clonar o repositório do Frontend
 
-In the project directory, you can run:
+```bash
+git clone https://github.com/toledomg/CDM-Front_Luchost.git
+```
 
-### `yarn dev`
+### 💾 Instale as dependências Frontend
 
-Runs the app in the development mode.\
-Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+`yarn`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 💾 Rodar servidor Frontend
 
-### `yarn test`
+`yarn dev`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Abra em seu browser o endereço [http://localhost:5173](http://localhost:5173)
 
-### `yarn build`
+#### Clonar o repositório do Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/toledomg/CDM-API_LucHost.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 💾 Instale as dependências Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`yarn`
 
-### `yarn eject`
+### 💾 Rodar servidor Backend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`yarn dev`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Url API Local: `http://localhost:3000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+</Details>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🤝 Contribuições
 
-## Learn More
+- **Alexsandro Toledo**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - [Github](https://github.com/toledomg)
+  - [Linkedin](https://www.linkedin.com/in/toledomg/)
