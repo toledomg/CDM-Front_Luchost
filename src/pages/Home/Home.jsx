@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import jwt_decode from "jwt-decode";
 import { HomeSection } from "./style";
 
 import { HomeLoginContext } from "./../../providers/HomeLoginContext";
 
 import FormLogin from "../../components/Main/Form/FormLogin";
+import LogoImg from "./image";
 
 function Home() {
   const { register, handleSubmit, errors, onSubmitFunction } =
@@ -49,6 +49,7 @@ function Home() {
             </div>
           </div>
         </HomeSection>
+        <LogoImg />
       </motion.div>
     </>
   );
