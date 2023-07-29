@@ -34,6 +34,7 @@ function ModalAdd() {
             <i
               className="material-symbols-outlined"
               onClick={() => modalShowAdd()}
+              title="Fechar Cadastro"
             >
               close
             </i>

@@ -7,7 +7,7 @@ function HeaderD({ exitPage }) {
       <HeaderHubDash>
         {/* <span>CDM LucHost</span> */}
         <img src="src\assets\img\logo.png" title="Logo da LucHost"></img>
-        <Link onClick={exitPage} to="/home">
+        <Link onClick={exitPage} to="/home" title="Fazer Logout">
           Sair
         </Link>
       </HeaderHubDash>

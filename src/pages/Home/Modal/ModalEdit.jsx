@@ -46,6 +46,7 @@ function ModalEdit() {
             <i
               className="material-symbols-outlined"
               onClick={() => modalShowEdit()}
+              title="Fechar Editar"
             >
               close
             </i>

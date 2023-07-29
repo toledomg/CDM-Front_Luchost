@@ -21,6 +21,7 @@ function RenderList() {
               <i
                 onClick={() => modalShowEdit(setAttTech(tech))}
                 className="material-symbols-outlined"
+                title="Editar Contatos"
               >
                 edit
               </i>

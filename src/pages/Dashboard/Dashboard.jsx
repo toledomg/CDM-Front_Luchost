@@ -98,8 +98,10 @@ function Dashboard() {
 
           <SectionInfo>
             <div>
-              <h2>Contatos</h2>
-              <BtnAdd onClick={() => modalShowAdd()}>+</BtnAdd>
+              <h2>Lista de Contatos</h2>
+              <BtnAdd onClick={() => modalShowAdd()} title="Adicionar Contatos">
+                +
+              </BtnAdd>
             </div>
             {loading ? (
               <>
