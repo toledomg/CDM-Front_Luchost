@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { HomeSection } from "./style";
-import logo from "../../../public/logo.png";
+import logo from "/logo.png";
 
 import { HomeLoginContext } from "./../../providers/HomeLoginContext";
 

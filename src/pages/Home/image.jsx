@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
-import logo from "../../../public/luchost.svg";
+import logo from "/luchost.svg";
 import { StyledImageDiv } from "./styles.Image";
 
 const LogoImg = () => (

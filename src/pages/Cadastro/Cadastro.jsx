@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
+import logo from "/logo.png";
+
 import { CadSection } from "./style";
 import FormCadastro from "./../../components/Main/Form/FormCadastro";
 
@@ -26,8 +28,9 @@ function Cadastro() {
       >
         <CadSection>
           <section>
-            <span>CDM LucHost</span>
-            <Link to="/home">Voltar</Link>
+            {/* <span>CDM LucHost</span> */}
+            <img src={logo} title="Logo da LucHost"></img>
+            {/* <Link to="/home">Voltar</Link> */}
           </section>
           <div>
             <h1>Crie sua conta</h1>

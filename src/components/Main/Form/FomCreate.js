@@ -125,15 +125,15 @@ export const FormCreate = styled.form`
     padding: 0px 22px;
     gap: 10px;
 
-    background: var(--color-primary);
+    background: var(--color-gray-1);
 
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-gray-1);
     border-radius: 4px;
 
     :hover {
-      background: var(--color-primary-Focus);
+      background: var(--color-gray-2);
 
-      border: 1px solid var(--color-primary-Focus);
+      border: 1px solid var(--color-gray-2);
     }
 
     :not {

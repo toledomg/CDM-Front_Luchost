@@ -1,10 +1,12 @@
-# Desefio Full Stack M6/S01 - Projeto: CDM-Front (Customer Data Management)
+# Desafio Full Stack M6/S01 - Projeto: CDM-Front (Customer Data Management)
 
-- [URL Deploy]()
+### Links
 
-- [URL API]()
+- [Site DEMO](https://cdm.luchost.com/)
 
-- [URL Repo GIT]()
+- [Documentação](https://cdm-doc.luchost.com/)
+
+- API: `http://cdm-api.luchost.com`
 
 # Getting Started with Create React App
 

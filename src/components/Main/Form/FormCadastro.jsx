@@ -56,6 +56,7 @@ function FormCadastro({ navigate }) {
       {/* <SelectCreate register={register} />
       {errors.course_module?.message} */}
       <BtnDefault type="submit">Cadastrar</BtnDefault>
+      <Link to="/home">Voltar</Link>
     </FormCreate>
   );
 }
