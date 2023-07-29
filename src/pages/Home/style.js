@@ -17,6 +17,11 @@ export const HomeSection = styled.section`
 
   padding: 10px;
 
+  img {
+    width: 280px;
+    height: auto;
+  }
+
   span {
     font-style: normal;
     font-weight: 700;

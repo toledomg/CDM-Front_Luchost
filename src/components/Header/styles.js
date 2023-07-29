@@ -9,4 +9,8 @@ export const HeaderHubDash = styled.header`
     letter-spacing: 1px;
     color: var(--color-primary);
   }
+  img {
+    width: 250px;
+    height: auto;
+  }
 `;

@@ -34,7 +34,8 @@ function Home() {
         transition={{ opacity: 1 }}
       >
         <HomeSection>
-          <span>CDM LucHost</span>
+          {/* <span>CDM LucHost</span> */}
+          <img src="src\assets\img\logo.png" title="Logo da LucHost"></img>
           <div>
             <h2>Login</h2>
             <FormLogin
