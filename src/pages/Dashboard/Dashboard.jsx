@@ -14,7 +14,6 @@ import spinner from "../../assets/img/spinner.svg";
 import ModalAdd from "../Home/Modal/ModalAdd";
 import ModalEdit from "../Home/Modal/ModalEdit";
 import { ModalTechContext } from "../../providers/ModalTechContext";
-import LogoImg from "../Home/image";
 
 let Name = [];
 let Phone = [];

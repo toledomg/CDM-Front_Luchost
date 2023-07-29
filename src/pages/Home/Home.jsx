@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { HomeSection } from "./style";
+import logo from "../../../public/logo.png";
 
 import { HomeLoginContext } from "./../../providers/HomeLoginContext";
 
@@ -35,7 +36,7 @@ function Home() {
       >
         <HomeSection>
           {/* <span>CDM LucHost</span> */}
-          <img src="src\assets\img\logo.png" title="Logo da LucHost"></img>
+          <img src={logo} title="Logo da LucHost"></img>
           <div>
             <h2>Login</h2>
             <FormLogin
