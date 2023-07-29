@@ -22,7 +22,7 @@ function RenderList() {
                 onClick={() => modalShowEdit(setAttTech(tech))}
                 className="material-symbols-outlined"
               >
-                delete
+                edit
               </i>
             </section>
           </li>

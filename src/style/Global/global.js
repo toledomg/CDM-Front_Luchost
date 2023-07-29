@@ -10,8 +10,8 @@ body {
 :root {
   --font-primary: "Inter", sans-serif;
 
-  --color-primary: #FF577F;
-  --color-primary-Focus: #FF427F;
+  --color-primary: #5599ff;
+  --color-primary-Focus: #264dfa;
   --color-primary-Negative: #59323F;
 
   --color-gray-4: #121214;
