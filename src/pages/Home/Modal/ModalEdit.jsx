@@ -9,6 +9,7 @@ import SelectModalAdd from "../../../components/Main/Select/SelectModalAdd";
 import { UserTechAddContext } from "../../../providers/UserTechAddContext";
 import { UserTechContext } from "./../../../providers/UserTechContext";
 import { ModalTechContext } from "./../../../providers/ModalTechContext";
+import InputDefer from "../../../components/Main/Form/InputDefer";
 
 function ModalEdit() {
   const { editTechProfile, deleteTechProfile, renderTech } =
@@ -38,7 +39,7 @@ function ModalEdit() {
       <ModalSection className="modalBox" role="dialog">
         <section className="containerModal">
           <section className=" divTitle">
-            <p>Tecnologia Detalhes</p>
+            <p>Detalhes do Contato</p>
             <i
               className="material-symbols-outlined"
               onClick={() => modalShowEdit()}
@@ -47,9 +48,31 @@ function ModalEdit() {
             </i>
           </section>
           <FormEditTech onSubmit={handleSubmit(submit)}>
-            <input type="text" {...register("title")} />
+            <InputDefer
+              label="Nome"
+              type="text"
+              id="name"
+              placeholder="Digite aqui o novo Nome"
+              {...register("name")}
+            />
+            <InputDefer
+              label="Email"
+              type="text"
+              id="email"
+              placeholder="Digite aqui o novo email"
+              {...register("email")}
+            />
+            <InputDefer
+              label="Telefone"
+              type="text"
+              id="phone"
+              placeholder="Digite aqui o novo Telefone"
+              {...register("phone")}
+            />
 
-            <SelectModalAdd register={register} />
+            {/* <input type="text" {...register("email")} />
+            <SelectModalAdd register={register} /> */}
+
             <div className="buttonModal">
               <BtnDefault type="submit">Salvar Alterações</BtnDefault>
               <BtnMedium onClick={handleSubmit(delTech)} type="submit">

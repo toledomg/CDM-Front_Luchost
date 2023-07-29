@@ -34,7 +34,7 @@ export const UserTechAddProvider = ({ children }) => {
   const editTechProfile = async (data, id) => {
     const token = JSON.parse(localStorage.getItem("@CDM-Token"));
     try {
-      const response = await api.put("/contacts/" + id, data, {
+      const response = await api.patch("/contacts/" + id, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -67,7 +67,7 @@ export const UserTechAddProvider = ({ children }) => {
       });
       setRenderTech(renderTech.filter((tech) => tech.id !== id));
       setShowModalEdit(false);
-      toast.success("Tecnologia deletada com sucesso");
+      toast.success("Cadastro deletado com sucesso");
     } catch (error) {
       console.log(error);
       toast.error("Algo deu errado");
