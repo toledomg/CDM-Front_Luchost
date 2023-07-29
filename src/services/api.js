@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://api-cdm-luchost.onrender.com/",
+  baseURL: "https://cdm-api.luchost.com/",
   timeout: 5000,
 });
