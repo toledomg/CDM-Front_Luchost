@@ -6,7 +6,8 @@ export const Nav = styled.nav`
 
     max-width: 1000px;
     min-width: 320px;
-    min-height: 72px;
+    height: 80px;
+    min-height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,8 +59,8 @@ export const Section = styled.section`
   div {
     max-width: 1000px;
     min-width: 320px;
-    height: auto;
-    min-height: 131px;
+    height: 80px;
+    min-height: 70px;
 
     display: flex;
     flex-wrap: wrap;
@@ -114,8 +115,8 @@ export const SectionInfo = styled.section`
   div {
     max-width: 1000px;
     min-width: 320px;
-    height: auto;
-    min-height: 131px;
+    height: 80px;
+    min-height: 70px;
 
     display: flex;
     flex-wrap: wrap;
