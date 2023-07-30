@@ -108,7 +108,7 @@ export const SectionInfo = styled.section`
     img {
       width: 100px;
       height: auto;
-      margin: 40% auto;
+      margin: 10% auto;
     }
   }
 
@@ -137,6 +137,11 @@ export const SectionInfo = styled.section`
     color: var(--color-gray-1);
   }
 
-  @media screen and (min-width: 350px) and (max-width: 4044px) {
+  @media screen and (max-width: 350px) and (max-width: 4044px) {
+    .loading {
+      img {
+        margin: 40% auto;
+      }
+    }
   }
 `;
