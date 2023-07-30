@@ -108,7 +108,7 @@ export const SectionInfo = styled.section`
     img {
       width: 100px;
       height: auto;
-      margin: 25% auto;
+      margin: 40% auto;
     }
   }
 
