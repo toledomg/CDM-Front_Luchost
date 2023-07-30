@@ -94,10 +94,6 @@ export const SectionInfo = styled.section`
   border-top: 1px solid var(--color-gray-3);
 
   .loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
     p {
       margin-top: 60px;
       font-size: 2rem;
@@ -106,10 +102,14 @@ export const SectionInfo = styled.section`
     }
 
     img {
-      width: 100px;
+      width: 70px;
       height: auto;
-      margin: 10% auto;
+      margin: 0px auto;
     }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   div {
