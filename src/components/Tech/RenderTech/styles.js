@@ -5,7 +5,7 @@ export const TechUl = styled.ul`
   max-width: 1000px;
   min-width: 400px;
   min-height: 380px;
-  max-height: 480px;
+  max-height: 570px;
 
   display: flex;
   align-items: center;
