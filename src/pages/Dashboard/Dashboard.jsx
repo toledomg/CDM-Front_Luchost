@@ -105,7 +105,6 @@ function Dashboard() {
             {loading ? (
               <>
                 <div className="loading">
-                  <p>Carregando</p>
                   <img src={spinner} />
                 </div>
               </>
