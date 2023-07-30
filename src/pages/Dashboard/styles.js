@@ -136,6 +136,6 @@ export const SectionInfo = styled.section`
     color: var(--color-gray-1);
   }
 
-  @media screen and (min-width: 769px) and (max-width: 4044px) {
+  @media screen and (min-width: 350px) and (max-width: 4044px) {
   }
 `;

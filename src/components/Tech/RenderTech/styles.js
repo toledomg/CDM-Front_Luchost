@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const TechUl = styled.ul`
   width: 100%;
   max-width: 1000px;
-  min-height: 400px;
+  min-width: 400px;
+  min-height: 380px;
 
   display: flex;
   align-items: center;
@@ -59,6 +60,7 @@ export const TechUl = styled.ul`
   li {
     width: 40%;
     height: 70px;
+    min-width: 370px;
 
     display: flex;
     align-items: center;
