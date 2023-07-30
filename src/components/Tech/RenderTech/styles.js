@@ -5,6 +5,7 @@ export const TechUl = styled.ul`
   max-width: 1000px;
   min-width: 400px;
   min-height: 380px;
+  max-height: 480px;
 
   display: flex;
   align-items: center;
@@ -18,7 +19,7 @@ export const TechUl = styled.ul`
   padding: 15px 15px;
   gap: 16px;
 
-  /* overflow-y: auto; */
+  overflow-x: auto;
 
   ::-webkit-scrollbar {
     width: 8px;
