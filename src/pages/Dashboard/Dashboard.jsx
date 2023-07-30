@@ -14,6 +14,7 @@ import spinner from "../../assets/img/spinner.svg";
 import ModalAdd from "../Home/Modal/ModalAdd";
 import ModalEdit from "../Home/Modal/ModalEdit";
 import { ModalTechContext } from "../../providers/ModalTechContext";
+import { FooterPage } from "../../components/Footer/footer";
 
 let Name = [];
 let Phone = [];
@@ -113,6 +114,7 @@ function Dashboard() {
             )}
           </SectionInfo>
         </Section>
+        <FooterPage></FooterPage>
       </motion.div>
     </>
   );
