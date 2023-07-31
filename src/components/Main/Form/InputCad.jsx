@@ -61,7 +61,7 @@ function InputCad({ register, errors }) {
         label="Telefone"
         type="text"
         id="phone"
-        placeholder="Telefone"
+        placeholder="Ex. 34912348765"
         {...register("phone")}
         error={errors.phone?.message}
       />

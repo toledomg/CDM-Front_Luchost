@@ -40,7 +40,9 @@ function FormCadastro({ navigate }) {
       toast.success("Cadastro realizado com sucesso");
     } catch (error) {
       console.error(error);
-      toast.error("Algo deu errado");
+      toast.error(
+        "Algo deu errado, verifique se todos os dados foram inserido corretamente"
+      );
     }
   };
 

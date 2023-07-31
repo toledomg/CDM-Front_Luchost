@@ -27,8 +27,8 @@ export const formSchema = yup.object().shape({
 
   phone: yup
     .string()
-    .required("Telefone é Obrigatório.")
-    .matches(/.{11,}/, "Precisa conter no mínimo 11 caracteres"),
+    .required("Número Celular é Obrigatório.")
+    .matches(/^\d{11}$/, "Precisa conter exatamente 11 dígitos numéricos"),
 });
 
 export const loginSchema = yup.object().shape({
@@ -47,6 +47,6 @@ export const ModalEditSchema = yup.object().shape({
     .email("E-mail inválido."),
   phone: yup
     .string()
-    .required("Telefone é Obrigatório.")
-    .matches(/.{11,}/, "Precisa conter no mínimo 11 caracteres"),
+    .required("Número Celular é Obrigatório.")
+    .matches(/^\d{11}$/, "Precisa conter exatamente 11 dígitos numéricos"),
 });
