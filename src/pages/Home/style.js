@@ -22,6 +22,12 @@ export const HomeSection = styled.section`
     height: auto;
   }
 
+  .image-placeholder {
+    background-color: var(--color-gray-3);
+    width: 250px;
+    height: 50;
+  }
+
   span {
     font-style: normal;
     font-weight: 700;

@@ -16,7 +16,7 @@ import ModalEdit from "../Home/Modal/ModalEdit";
 import { ModalTechContext } from "../../providers/ModalTechContext";
 
 let Name = [];
-let Phone = [];
+let Email = [];
 
 function Dashboard() {
   const {
@@ -58,7 +58,7 @@ function Dashboard() {
         });
 
         setUser(response.data);
-        Phone = response.data.email;
+        Email = response.data.email;
         Name =
           response.data.name[0].toUpperCase() + response.data.name.substr(1);
       } catch (error) {
@@ -92,7 +92,7 @@ function Dashboard() {
         <Section>
           <div>
             <h1>Olá {Name}.</h1>
-            <p>Email: {Phone}</p>
+            <p>Email: {Email}</p>
           </div>
 
           <SectionInfo>
