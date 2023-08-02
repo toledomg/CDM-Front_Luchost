@@ -28,9 +28,7 @@ function Cadastro() {
       >
         <CadSection>
           <section>
-            {/* <span>CDM LucHost</span> */}
             <img src={logo} title="Logo da LucHost"></img>
-            {/* <Link to="/home">Voltar</Link> */}
           </section>
           <div>
             <h1>Crie sua conta</h1>

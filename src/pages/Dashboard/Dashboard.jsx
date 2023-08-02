@@ -11,9 +11,11 @@ import RenderTech from "../../components/Tech/RenderTech/RenderTech";
 import jwtDecode from "jwt-decode";
 import spinner from "../../assets/img/spinner.svg";
 
-import ModalAdd from "../Home/Modal/ModalAdd";
-import ModalEdit from "../Home/Modal/ModalEdit";
+import ModalAdd from "../Home/Modal/ModalContactAdd";
+import ModalEdit from "../Home/Modal/ModalContacEdit";
 import { ModalTechContext } from "../../providers/ModalTechContext";
+import { UserContext } from "../../providers/UserContext";
+import ModalUserEdit from "../Home/Modal/ModalUserEdit";
 
 let Name = [];
 let Email = [];
@@ -24,8 +26,11 @@ function Dashboard() {
     setShowModalEdit,
     showModalAdd,
     setShowModalAdd,
+    showModalUserEdit,
+    setModalShowUserEdit,
     modalShowAdd,
     modalShowEdit,
+    modalShowUserEdit,
   } = useContext(ModalTechContext);
 
   const navigate = useNavigate();
@@ -76,6 +81,8 @@ function Dashboard() {
     navigate("/");
   };
 
+  const { renderUser, setAttUser } = useContext(UserContext);
+
   return (
     <>
       <motion.div
@@ -86,13 +93,22 @@ function Dashboard() {
       >
         {showModalEdit && <ModalEdit setShowModalEdit={setShowModalEdit} />}
         {showModalAdd && <ModalAdd setShowModalAdd={setShowModalAdd} />}
+        {showModalUserEdit && (
+          <ModalUserEdit setShowModalUserEdit={setModalShowUserEdit} />
+        )}
         <Nav>
           <Header exitPage={exitPage} />
         </Nav>
         <Section>
           <div>
             <h1>Olá {Name}.</h1>
-            <p>Email: {Email}</p>
+            <BtnAdd
+              // onClick={() => modalShowUserEdit()}
+              className="material-symbols-outlined"
+              title="Editar Usuário"
+            >
+              edit
+            </BtnAdd>
           </div>
 
           <SectionInfo>

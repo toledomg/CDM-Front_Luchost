@@ -1,44 +1,44 @@
 import { createContext, useEffect, useState } from "react";
 import { api } from "../services/api";
 
-export const UserTechContext = createContext({});
+export const UserContext = createContext({});
 
-export const UserTechProvider = ({ children }) => {
+export const UserUserProvider = ({ children }) => {
   const [user, setUser] = useState([]);
-  const [renderTech, setRenderTech] = useState([]);
-  const [attTech, setAttTech] = useState(null);
+  const [renderUser, setRenderUser] = useState([]);
+  const [attUser, setAttUser] = useState(null);
 
   const token = JSON.parse(localStorage.getItem("@CDM-Token"));
 
   useEffect(() => {
-    async function listContactUser() {
+    async function listUser() {
       try {
-        const response = await api.get("contacts", {
+        const response = await api.get("users", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        setRenderTech(response.data);
+        setRenderUser(response.data);
         setUser(response.data);
       } catch (error) {
         console.log(error);
       }
     }
-    listContactUser();
+    listUser();
   }, []);
 
   return (
-    <UserTechContext.Provider
+    <UserContext.Provider
       value={{
         user,
         setUser,
-        renderTech,
-        setRenderTech,
-        attTech,
-        setAttTech,
+        renderUser,
+        setRenderUser,
+        attUser,
+        setAttUser,
       }}
     >
       {children}
-    </UserTechContext.Provider>
+    </UserContext.Provider>
   );
 };

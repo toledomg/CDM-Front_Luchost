@@ -41,7 +41,7 @@ function FormCadastro({ navigate }) {
     } catch (error) {
       console.error(error);
       toast.error(
-        "Algo deu errado, verifique se todos os dados foram inserido corretamente"
+        "Algo deu errado, verifique se todos os dados foram inseridos corretamente"
       );
     }
   };

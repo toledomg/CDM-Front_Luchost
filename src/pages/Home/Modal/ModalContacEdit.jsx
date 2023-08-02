@@ -9,8 +9,8 @@ import SelectModalAdd from "../../../components/Main/Select/SelectModalAdd";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { UserTechAddContext } from "../../../providers/UserTechAddContext";
-import { UserTechContext } from "./../../../providers/UserTechContext";
-import { ModalTechContext } from "./../../../providers/ModalTechContext";
+import { UserTechContext } from "../../../providers/UserTechContext";
+import { ModalTechContext } from "../../../providers/ModalTechContext";
 import InputDefer from "../../../components/Main/Form/InputDefer";
 
 function ModalEdit() {
