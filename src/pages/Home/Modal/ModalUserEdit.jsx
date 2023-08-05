@@ -35,7 +35,6 @@ function ModalUserEdit() {
         },
       });
       toast.success("Sucesso");
-      console.log(response.data);
     } catch (error) {
       console.log(error);
 
@@ -72,8 +71,6 @@ function ModalUserEdit() {
     const token = JSON.parse(localStorage.getItem("@CDM-Token"));
     const decodedToken = jwtDecode(token);
     const ID = decodedToken.sub;
-    console.log(ID);
-    console.log(id);
 
     try {
       const response = await api.delete(`/users/${id}`, {
