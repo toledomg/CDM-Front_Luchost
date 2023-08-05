@@ -86,6 +86,11 @@ export const Section = styled.section`
     color: var(--color-gray-1);
   }
 
+  .material-symbols-outlined {
+    color: var(--color-gray-0);
+    font-size: 1rem;
+  }
+
   @media screen and (min-width: 769px) and (max-width: 4044px) {
   }
 `;

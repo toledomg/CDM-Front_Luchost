@@ -140,3 +140,34 @@ export const BtnAdd = styled.button`
     border: 1px solid var(--color-gray-2);
   }
 `;
+
+export const BtnProfile = styled.button`
+  box-sizing: border-box;
+
+  height: 32px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--color-gray-0);
+
+  padding: 0px 17px;
+  gap: 10px;
+
+  background: var(--color-gray-3);
+
+  border: 1px solid var(--color-gray-3);
+  border-radius: 4px;
+
+  :hover {
+    background: var(--color-gray-2);
+
+    border: 1px solid var(--color-gray-2);
+  }
+`;

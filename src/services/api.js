@@ -4,7 +4,7 @@ const localUrl = "http://localhost:3000";
 const deployUrl = "https://cdm-api.luchost.com/";
 export const api = axios.create({
   baseURL: localUrl,
-  timeout: 5000,
+  timeout: 20000,
   headers: {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Credentials": "true",

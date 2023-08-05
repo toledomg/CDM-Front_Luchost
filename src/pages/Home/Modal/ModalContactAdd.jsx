@@ -11,7 +11,7 @@ import SelectModalAdd from "../../../components/Main/Select/SelectModalAdd";
 import { ModalEditSchema } from "../../../Validators/Schema";
 import { UserTechAddContext } from "../../../providers/UserTechAddContext";
 import InputDefer from "../../../components/Main/Form/InputDefer";
-import { ModalTechContext } from "./../../../providers/ModalTechContext";
+import { ModalTechContext } from "../../../providers/ModalTechContext";
 
 function ModalAdd() {
   const { createTechProfile } = useContext(UserTechAddContext);

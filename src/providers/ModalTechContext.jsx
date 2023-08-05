@@ -4,6 +4,7 @@ export const ModalTechContext = createContext({});
 
 export const ModalTechProvider = ({ children }) => {
   const [showModalEdit, setShowModalEdit] = useState(false);
+  const [showModalUserEdit, setShowModalUserEdit] = useState(false);
   const [showModalAdd, setShowModalAdd] = useState(false);
 
   const modalShowEdit = (event) => {
@@ -11,6 +12,14 @@ export const ModalTechProvider = ({ children }) => {
       setShowModalEdit(true);
     } else {
       setShowModalEdit(false);
+    }
+  };
+
+  const modalShowUserEdit = (event) => {
+    if (showModalUserEdit === false) {
+      setShowModalUserEdit(true);
+    } else {
+      setShowModalUserEdit(false);
     }
   };
 
@@ -27,10 +36,13 @@ export const ModalTechProvider = ({ children }) => {
       value={{
         showModalEdit,
         setShowModalEdit,
+        showModalUserEdit,
+        setShowModalUserEdit,
         showModalAdd,
         setShowModalAdd,
         modalShowAdd,
         modalShowEdit,
+        modalShowUserEdit,
       }}
     >
       {children}
