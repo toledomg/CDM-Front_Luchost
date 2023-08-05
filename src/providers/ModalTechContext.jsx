@@ -19,7 +19,7 @@ export const ModalTechProvider = ({ children }) => {
     if (showModalUserEdit === false) {
       setShowModalUserEdit(true);
     } else {
-      setShowModalEdit(false);
+      setShowModalUserEdit(false);
     }
   };
 

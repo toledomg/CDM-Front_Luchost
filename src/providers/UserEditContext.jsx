@@ -11,12 +11,31 @@ export const UserEditContext = createContext({});
 export const UserEditProvider = ({ children }) => {
   const { showModalUserEdit, setShowModalUserEdit } =
     useContext(ModalTechContext);
+
+  const { attUser, setAttUser } = useContext(UserContext);
+
   const { renderUser, setRenderUser } = useContext(UserContext);
+
+  const userProfile = async (id) => {
+    const token = JSON.parse(localStorage.getItem("@CDM-Token"));
+    try {
+      const response = await api.get(`users/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      toast.success("Sucesso");
+    } catch (error) {
+      console.log(error);
+
+      toast.error("Algo deu errado");
+    }
+  };
 
   const editUserProfile = async (data, id) => {
     const token = JSON.parse(localStorage.getItem("@CDM-Token"));
     try {
-      const response = await api.patch("/users/" + id, data, {
+      const response = await api.patch(`users/${id}`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -61,8 +80,11 @@ export const UserEditProvider = ({ children }) => {
       value={{
         editUserProfile,
         deleteUserProfile,
+        userProfile,
         renderUser,
         setRenderUser,
+        attUser,
+        setAttUser,
       }}
     >
       {children}

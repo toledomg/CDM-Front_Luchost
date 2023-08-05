@@ -3,7 +3,7 @@ import { api } from "../services/api";
 
 export const UserContext = createContext({});
 
-export const UserUserProvider = ({ children }) => {
+export const UserProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   const [renderUser, setRenderUser] = useState([]);
   const [attUser, setAttUser] = useState(null);
@@ -13,7 +13,7 @@ export const UserUserProvider = ({ children }) => {
   useEffect(() => {
     async function listUser() {
       try {
-        const response = await api.get("users", {
+        const response = await api.get(`/users/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -25,6 +25,7 @@ export const UserUserProvider = ({ children }) => {
       }
     }
     listUser();
+    console.log(listUser);
   }, []);
 
   return (

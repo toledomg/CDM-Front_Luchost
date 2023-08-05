@@ -19,25 +19,23 @@ function Cadastro() {
   }, []);
 
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ opacity: 1 }}
-      >
-        <CadSection>
-          <section>
-            <img src={logo} title="Logo da LucHost"></img>
-          </section>
-          <div>
-            <h1>Crie sua conta</h1>
-            <span>Rápido e grátis, vamos nessa</span>
-            <FormCadastro navigate={navigate} />
-          </div>
-        </CadSection>
-      </motion.div>
-    </>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ opacity: 1 }}
+    >
+      <CadSection>
+        <section>
+          <img src={logo} title="Logo da LucHost"></img>
+        </section>
+        <div>
+          <h1>Crie sua conta</h1>
+          <span>Rápido e grátis, vamos nessa</span>
+          <FormCadastro navigate={navigate} />
+        </div>
+      </CadSection>
+    </motion.div>
   );
 }
 

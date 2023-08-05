@@ -5,7 +5,7 @@ import { Nav, Section, SectionInfo } from "./styles";
 import { api } from "../../services/api";
 import { motion } from "framer-motion";
 import Header from "../../components/Header/Header";
-import { BtnAdd } from "../../style/Global/Buttons";
+import { BtnAdd, BtnProfile } from "../../style/Global/Buttons";
 import RenderTech from "../../components/Tech/RenderTech/RenderTech";
 
 import jwtDecode from "jwt-decode";
@@ -84,53 +84,50 @@ function Dashboard() {
   const { renderUser, setAttUser } = useContext(UserContext);
 
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ opacity: 1 }}
-      >
-        {showModalEdit && <ModalEdit setShowModalEdit={setShowModalEdit} />}
-        {showModalAdd && <ModalAdd setShowModalAdd={setShowModalAdd} />}
-        {showModalUserEdit && (
-          <ModalUserEdit setShowModalUserEdit={setModalShowUserEdit} />
-        )}
-        <Nav>
-          <Header exitPage={exitPage} />
-        </Nav>
-        <Section>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ opacity: 1 }}
+    >
+      {showModalEdit && <ModalEdit setShowModalEdit={setShowModalEdit} />}
+      {showModalAdd && <ModalAdd setShowModalAdd={setShowModalAdd} />}
+      {showModalUserEdit && (
+        <ModalUserEdit setModalShowUserEdit={setModalShowUserEdit} />
+      )}
+
+      <Nav>
+        <Header exitPage={exitPage} />
+      </Nav>
+      <Section>
+        <div>
+          <h1>Olá {Name}.</h1>
+          <BtnProfile
+            onClick={() => modalShowUserEdit()}
+            className="material-symbols-outlined"
+            title="Editar Usuário"
+          >
+            edit
+          </BtnProfile>
+        </div>
+
+        <SectionInfo>
           <div>
-            <h1>Olá {Name}.</h1>
-            <BtnAdd
-              // onClick={() => modalShowUserEdit()}
-              className="material-symbols-outlined"
-              title="Editar Usuário"
-            >
-              edit
+            <h2>Lista de Contatos</h2>
+            <BtnAdd onClick={() => modalShowAdd()} title="Adicionar Contatos">
+              +
             </BtnAdd>
           </div>
-
-          <SectionInfo>
-            <div>
-              <h2>Lista de Contatos</h2>
-              <BtnAdd onClick={() => modalShowAdd()} title="Adicionar Contatos">
-                +
-              </BtnAdd>
+          {loading ? (
+            <div className="loading">
+              <img src={spinner} />
             </div>
-            {loading ? (
-              <>
-                <div className="loading">
-                  <img src={spinner} />
-                </div>
-              </>
-            ) : (
-              <RenderTech />
-            )}
-          </SectionInfo>
-        </Section>
-      </motion.div>
-    </>
+          ) : (
+            <RenderTech />
+          )}
+        </SectionInfo>
+      </Section>
+    </motion.div>
   );
 }
 
