@@ -26,7 +26,7 @@ export const UserEditProvider = ({ children }) => {
         error.response.status === 409 &&
         errorMessage === "Email already exists"
       ) {
-        toast.error("O email já está em uso. Por favor, tente outro.");
+        toast.error("Por favor, tente outro Email.");
       } else {
         toast.error(
           "Ocorreu um erro na solicitação. Por favor, tente novamente mais tarde."
