@@ -60,21 +60,51 @@ export const UserEditProvider = ({ children }) => {
   const editUserProfile = async (data, id) => {
     const token = JSON.parse(localStorage.getItem("@CDM-Token"));
     try {
-      const response = await api.patch(`users/${id}`, data, {
+      const response = await api.get(`users/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
-      setRenderUser([
-        ...renderUser.filter((profile) => profile.id !== id),
-        response.data,
-      ]);
-      setAttUser(response.data);
-      setShowModalUserEdit(false);
-      toast.success(
-        `Perfil de ${response.data.name} foi atualizado com sucesso`
-      );
+      const emailRequisicao = response.data.email;
+
+      if (data.email === emailRequisicao) {
+        const updateData = { ...data, email: undefined };
+
+        const updateResponse = await api.patch(`users/${id}`, updateData, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        setRenderUser([
+          ...renderUser.filter((profile) => profile.id !== id),
+          updateResponse.data,
+        ]);
+
+        setAttUser(updateResponse.data);
+        setShowModalUserEdit(false);
+
+        toast.success(
+          `Perfil de ${updateResponse.data.name} foi atualizado com sucesso`
+        );
+      } else {
+        const updateResponse = await api.patch(`users/${id}`, data, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        setRenderUser([
+          ...renderUser.filter((profile) => profile.id !== id),
+          updateResponse.data,
+        ]);
+        setAttUser(updateResponse.data);
+        setShowModalUserEdit(false);
+        toast.success(
+          `Perfil de ${updateResponse.data.name} foi atualizado com sucesso`
+        );
+      }
     } catch (error) {
       handleRequestError(error);
     }
