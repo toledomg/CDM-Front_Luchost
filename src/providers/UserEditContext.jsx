@@ -18,7 +18,28 @@ export const UserEditProvider = ({ children }) => {
 
   const navigate = useNavigate();
 
-  const User = user;
+  const handleRequestError = (error) => {
+    if (error.response) {
+      const errorMessage = error.response.data.message;
+
+      if (
+        error.response.status === 409 &&
+        errorMessage === "Email already exists"
+      ) {
+        toast.error("O email já está em uso. Por favor, tente outro.");
+      } else {
+        toast.error(
+          "Ocorreu um erro na solicitação. Por favor, tente novamente mais tarde."
+        );
+      }
+    } else if (error.request) {
+      toast.error(
+        "Não foi possível realizar a solicitação. Verifique sua conexão de internet."
+      );
+    } else {
+      toast.error("Ocorreu um erro ao processar a solicitação.");
+    }
+  };
 
   const userProfile = async (id) => {
     const token = JSON.parse(localStorage.getItem("@CDM-Token"));
@@ -55,9 +76,7 @@ export const UserEditProvider = ({ children }) => {
         `Perfil de ${response.data.name} foi atualizado com sucesso`
       );
     } catch (error) {
-      console.log(error);
-
-      toast.error("Algo deu errado");
+      handleRequestError(error);
     }
   };
 
