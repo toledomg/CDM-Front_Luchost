@@ -35,7 +35,7 @@ function Dashboard() {
     modalShowUserEdit,
   } = useContext(ModalTechContext);
 
-  const { user, setUser, loading, setLoading, setAttUser } =
+  const { user, setUser, loading, setLoading, setAttUser, attUser } =
     useContext(UserContext);
 
   const navigate = useNavigate();
@@ -100,7 +100,7 @@ function Dashboard() {
       </Nav>
       <Section>
         <div>
-          <h1>Olá {Name}.</h1>
+          <h1>Olá {attUser.name}</h1>
           <BtnProfile
             onClick={() => modalShowUserEdit()}
             className="material-symbols-outlined"
