@@ -24,22 +24,17 @@ function ModalUserEdit() {
   const { userProfile, deleteUserProfile, editUserProfile } =
     useContext(UserEditContext);
 
-  const [isHidden, setIsHidden] = useState(true);
-
   const ESCAPE_KEYCODE = 27;
 
   useEffect(() => {
-    // Função para fechar o modal quando a tecla "Escape" for pressionada
     const handleEscapeKeyPress = (event) => {
       if (event.keyCode === ESCAPE_KEYCODE) {
         modalShowUserEdit();
       }
     };
 
-    // Adicionar o event listener quando o componente montar
     document.addEventListener("keydown", handleEscapeKeyPress);
 
-    // Remover o event listener quando o componente desmontar
     return () => {
       document.removeEventListener("keydown", handleEscapeKeyPress);
     };
@@ -93,15 +88,6 @@ function ModalUserEdit() {
               {...register("name")}
             />
             {errors.name?.message}
-
-            <InputDefer
-              label="Senha"
-              type="text"
-              id="password"
-              placeholder="Digite sua nova Senha"
-              {...register("password")}
-            />
-            {errors.password?.message}
 
             <InputDefer
               label="Email"

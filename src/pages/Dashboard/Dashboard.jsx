@@ -53,6 +53,7 @@ function Dashboard() {
     const token = JSON.parse(localStorage.getItem("@CDM-Token"));
     const decodedToken = jwtDecode(token);
     const id = decodedToken.sub;
+
     async function loadUser() {
       try {
         setLoading(true);
@@ -63,7 +64,7 @@ function Dashboard() {
         });
         setUser(response.data);
         setAttUser(response.data);
-
+        console.log(attUser);
         Email = response.data.email;
         Name =
           response.data.name[0].toUpperCase() + response.data.name.substr(1);
@@ -100,7 +101,7 @@ function Dashboard() {
       </Nav>
       <Section>
         <div>
-          <h1>Olá {attUser.name}</h1>
+          <h1>Olá</h1>
           <BtnProfile
             onClick={() => modalShowUserEdit()}
             className="material-symbols-outlined"
