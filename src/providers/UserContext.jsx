@@ -25,7 +25,6 @@ export const UserProvider = ({ children }) => {
       }
     }
     listUser();
-    console.log(listUser);
   }, []);
 
   return (
