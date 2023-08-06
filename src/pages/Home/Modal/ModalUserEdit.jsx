@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
+import { useNavigate } from "react-router";
+
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -15,7 +17,7 @@ import { UserContext } from "../../../providers/UserContext";
 import { ModalEditSchema } from "../../../Validators/Schema";
 
 function ModalUserEdit() {
-  const { modalShowUserEdit } = useContext(ModalTechContext);
+  const { modalShowUserEdit, setShowModalEdit } = useContext(ModalTechContext);
 
   const { user, attUser } = useContext(UserContext);
 
@@ -23,6 +25,25 @@ function ModalUserEdit() {
     useContext(UserEditContext);
 
   const [isHidden, setIsHidden] = useState(true);
+
+  const ESCAPE_KEYCODE = 27;
+
+  useEffect(() => {
+    // Função para fechar o modal quando a tecla "Escape" for pressionada
+    const handleEscapeKeyPress = (event) => {
+      if (event.keyCode === ESCAPE_KEYCODE) {
+        modalShowUserEdit();
+      }
+    };
+
+    // Adicionar o event listener quando o componente montar
+    document.addEventListener("keydown", handleEscapeKeyPress);
+
+    // Remover o event listener quando o componente desmontar
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKeyPress);
+    };
+  }, [modalShowUserEdit]);
 
   const {
     register,

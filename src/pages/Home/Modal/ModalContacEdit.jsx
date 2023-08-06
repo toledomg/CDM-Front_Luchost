@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 import * as yup from "yup";
@@ -20,6 +20,21 @@ function ModalEdit() {
   const { attTech } = useContext(UserTechContext);
 
   const { modalShowEdit } = useContext(ModalTechContext);
+
+  const ESCAPE_KEYCODE = 27;
+
+  useEffect(() => {
+    const handleEscapeKeyPress = (event) => {
+      if (event.keyCode === ESCAPE_KEYCODE) {
+        modalShowEdit();
+      }
+    };
+    document.addEventListener("keydown", handleEscapeKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKeyPress);
+    };
+  }, [modalShowEdit]);
 
   const {
     register,

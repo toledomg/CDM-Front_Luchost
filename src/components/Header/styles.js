@@ -13,4 +13,17 @@ export const HeaderHubDash = styled.header`
     width: 250px;
     height: auto;
   }
+
+  .reset-link {
+    color: inherit;
+    text-decoration: none;
+    background: none;
+    border: none;
+
+    :hover {
+      background: none;
+
+      border: none;
+    }
+  }
 `;

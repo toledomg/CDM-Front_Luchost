@@ -1,4 +1,4 @@
-import React, { useState, useContext, forwardRef } from "react";
+import React, { useState, useContext, forwardRef, useEffect } from "react";
 import { ModalSection, FormEditTech } from "./style";
 
 import * as yup from "yup";
@@ -16,6 +16,22 @@ import { ModalTechContext } from "../../../providers/ModalTechContext";
 function ModalAdd() {
   const { createTechProfile } = useContext(UserTechAddContext);
   const { modalShowAdd } = useContext(ModalTechContext);
+
+  const ESCAPE_KEYCODE = 27;
+
+  useEffect(() => {
+    const handleEscapeKeyPress = (event) => {
+      if (event.keyCode === ESCAPE_KEYCODE) {
+        modalShowAdd();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscapeKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKeyPress);
+    };
+  }, [modalShowAdd]);
 
   const {
     register,

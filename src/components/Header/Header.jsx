@@ -5,8 +5,9 @@ import { HeaderHubDash } from "./styles";
 function HeaderD({ exitPage }) {
   return (
     <HeaderHubDash>
-      {/* <span>CDM LucHost</span> */}
-      <img src={logo} title="Logo da LucHost"></img>
+      <a href="/dashboard" className="reset-link">
+        <img src={logo} title="Logo da LucHost" />
+      </a>
       <Link onClick={exitPage} to="/home" title="Fazer Logout">
         Sair
       </Link>
