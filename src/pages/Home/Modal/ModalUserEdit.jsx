@@ -22,6 +22,8 @@ function ModalUserEdit() {
   const { userProfile, deleteUserProfile, editUserProfile } =
     useContext(UserEditContext);
 
+  const [isHidden, setIsHidden] = useState(true);
+
   const {
     register,
     handleSubmit,
@@ -70,6 +72,15 @@ function ModalUserEdit() {
               {...register("name")}
             />
             {errors.name?.message}
+
+            <InputDefer
+              label="Senha"
+              type="text"
+              id="password"
+              placeholder="Digite sua nova Senha"
+              {...register("password")}
+            />
+            {errors.password?.message}
 
             <InputDefer
               label="Email"
