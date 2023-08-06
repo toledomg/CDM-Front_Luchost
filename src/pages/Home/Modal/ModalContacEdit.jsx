@@ -4,9 +4,10 @@ import { useForm } from "react-hook-form";
 import { ModalSection, FormEditTech } from "./style";
 
 import { BtnDefault, BtnMedium } from "../../../style/Global/Buttons";
-import SelectModalAdd from "../../../components/Main/Select/SelectModalAdd";
 
-import { yupResolver } from "@hookform/resolvers/yup";
+import { api } from "../../../services/api";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 import { UserTechAddContext } from "../../../providers/UserTechAddContext";
 import { UserTechContext } from "../../../providers/UserTechContext";
@@ -16,6 +17,9 @@ import InputDefer from "../../../components/Main/Form/InputDefer";
 function ModalEdit() {
   const { editTechProfile, deleteTechProfile, renderTech } =
     useContext(UserTechAddContext);
+
+  const [renderUser, setRenderUser] = useState([]);
+  const navigate = useNavigate();
 
   const { attTech, setAttTech } = useContext(UserTechContext);
 

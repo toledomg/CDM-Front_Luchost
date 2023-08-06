@@ -2,143 +2,40 @@ import React, { useState, useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 import { ModalSection, FormEditTech } from "./style";
-
 import { BtnDefault, BtnMedium } from "../../../style/Global/Buttons";
-import SelectModalAdd from "../../../components/Main/Select/SelectModalAdd";
 
-import { yupResolver } from "@hookform/resolvers/yup";
-
-import { UserContext } from "../../../providers/UserContext";
-import { UserEditContext } from "../../../providers/UserEditContext";
 import { ModalTechContext } from "../../../providers/ModalTechContext";
-import InputDefer from "../../../components/Main/Form/InputDefer";
-import jwtDecode from "jwt-decode";
-import { api } from "../../../services/api";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 
-let User = [];
+import InputDefer from "../../../components/Main/Form/InputDefer";
+import { UserEditContext } from "../../../providers/UserEditContext";
+import { UserContext } from "../../../providers/UserContext";
 
 function ModalUserEdit() {
-  const { modalShowUserEdit, setShowModalUserEdit, modalShowEdit } =
-    useContext(ModalTechContext);
+  const { modalShowUserEdit } = useContext(ModalTechContext);
 
-  const [renderUser, setRenderUser] = useState([]);
-  const navigate = useNavigate();
-  //
-  const userProfile = async (id) => {
-    const token = JSON.parse(localStorage.getItem("@CDM-Token"));
-    try {
-      const response = await api.get(`users/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      toast.success("Sucesso");
-    } catch (error) {
-      console.log(error);
+  const { user, attUser } = useContext(UserContext);
 
-      toast.error("Algo deu errado");
-    }
-  };
-
-  const editUserProfile = async (data, id) => {
-    const token = JSON.parse(localStorage.getItem("@CDM-Token"));
-    try {
-      const response = await api.patch(`users/${id}`, data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      setRenderUser([
-        ...renderUser.filter((profile) => profile.id !== id),
-        response.data,
-      ]);
-
-      setShowModalUserEdit(false);
-      toast.success(
-        `Perfil de ${response.data.name} foi atualizado com sucesso`
-      );
-    } catch (error) {
-      console.log(error);
-
-      toast.error("Algo deu errado");
-    }
-  };
-
-  const deleteUserProfile = async (id) => {
-    const token = JSON.parse(localStorage.getItem("@CDM-Token"));
-    const decodedToken = jwtDecode(token);
-    const ID = decodedToken.sub;
-
-    try {
-      const response = await api.delete(`/users/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setRenderUser(renderUser.filter((profile) => profile.id !== id));
-      localStorage.removeItem("@CDM-Token");
-      localStorage.removeItem("@CDM-ID");
-      setShowModalUserEdit(false);
-      navigate("/");
-      toast.success("Perfil deletado com sucesso");
-    } catch (error) {
-      console.log(error);
-      toast.error("Algo deu errado");
-    }
-  };
-  //
-
-  const token = JSON.parse(localStorage.getItem("@CDM-Token"));
-
-  const [user, setUser] = useState();
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const tokenJSON = localStorage.getItem("@CDM-Token");
-    const decodedToken = jwtDecode(tokenJSON);
-    const id = decodedToken.sub;
-
-    async function loadUser() {
-      try {
-        setLoading(true);
-        const response = await api.get(`users/${id}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-
-        setUser(response.data);
-        User = response.data;
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadUser();
-  }, []);
+  const { userProfile, deleteUserProfile, editUserProfile } =
+    useContext(UserEditContext);
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
-      name: User.name,
-      email: User.email,
-      phone: User.phone,
+      name: attUser.name,
+      email: attUser.email,
+      phone: attUser.phone,
     },
   });
 
   const list = (data) => {
-    userProfile(Id);
+    userProfile(user.id);
   };
 
   const submit = (data) => {
-    editUserProfile(data, User.id);
+    editUserProfile(data, user.id);
   };
 
   const delUser = () => {
-    deleteUserProfile(User.id);
+    deleteUserProfile(user.id);
   };
 
   return (

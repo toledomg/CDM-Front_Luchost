@@ -4,7 +4,6 @@ import { api } from "../services/api";
 export const UserTechContext = createContext({});
 
 export const UserTechProvider = ({ children }) => {
-  const [user, setUser] = useState([]);
   const [renderTech, setRenderTech] = useState([]);
   const [attTech, setAttTech] = useState(null);
 
@@ -19,7 +18,6 @@ export const UserTechProvider = ({ children }) => {
           },
         });
         setRenderTech(response.data);
-        setUser(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -30,8 +28,6 @@ export const UserTechProvider = ({ children }) => {
   return (
     <UserTechContext.Provider
       value={{
-        user,
-        setUser,
         renderTech,
         setRenderTech,
         attTech,

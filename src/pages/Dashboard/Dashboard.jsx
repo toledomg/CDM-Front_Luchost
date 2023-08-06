@@ -4,17 +4,19 @@ import { useNavigate } from "react-router-dom";
 import { Nav, Section, SectionInfo } from "./styles";
 import { api } from "../../services/api";
 import { motion } from "framer-motion";
-import Header from "../../components/Header/Header";
 import { BtnAdd, BtnProfile } from "../../style/Global/Buttons";
+
+import { ModalTechContext } from "../../providers/ModalTechContext";
+import { UserContext } from "../../providers/UserContext";
+
 import RenderTech from "../../components/Tech/RenderTech/RenderTech";
+import Header from "../../components/Header/Header";
 
 import jwtDecode from "jwt-decode";
 import spinner from "../../assets/img/spinner.svg";
 
 import ModalAdd from "../Home/Modal/ModalContactAdd";
 import ModalEdit from "../Home/Modal/ModalContacEdit";
-import { ModalTechContext } from "../../providers/ModalTechContext";
-import { UserContext } from "../../providers/UserContext";
 import ModalUserEdit from "../Home/Modal/ModalUserEdit";
 
 let Name = [];
@@ -33,11 +35,10 @@ function Dashboard() {
     modalShowUserEdit,
   } = useContext(ModalTechContext);
 
-  const navigate = useNavigate();
-  const token = JSON.parse(localStorage.getItem("@CDM-Token"));
+  const { user, setUser, loading, setLoading, setAttUser } =
+    useContext(UserContext);
 
-  const [user, setUser] = useState();
-  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("@CDM-Token"));
@@ -49,10 +50,9 @@ function Dashboard() {
   }, []);
 
   useEffect(() => {
-    const tokenJSON = localStorage.getItem("@CDM-Token");
-    const decodedToken = jwtDecode(tokenJSON);
+    const token = JSON.parse(localStorage.getItem("@CDM-Token"));
+    const decodedToken = jwtDecode(token);
     const id = decodedToken.sub;
-
     async function loadUser() {
       try {
         setLoading(true);
@@ -61,8 +61,9 @@ function Dashboard() {
             Authorization: `Bearer ${token}`,
           },
         });
-
         setUser(response.data);
+        setAttUser(response.data);
+
         Email = response.data.email;
         Name =
           response.data.name[0].toUpperCase() + response.data.name.substr(1);
@@ -80,8 +81,6 @@ function Dashboard() {
     localStorage.removeItem("@CDM-ID");
     navigate("/");
   };
-
-  const { renderUser, setAttUser } = useContext(UserContext);
 
   return (
     <motion.div

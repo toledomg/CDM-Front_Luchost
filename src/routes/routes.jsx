@@ -8,6 +8,8 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import { UserTechProvider } from "../providers/UserTechContext";
 import { ModalTechProvider } from "./../providers/ModalTechContext";
 import { UserTechAddProvider } from "./../providers/UserTechAddContext";
+import { UserProvider } from "../providers/UserContext";
+import { UserEditProvider } from "../providers/UserEditContext";
 
 function AppRoutes() {
   return (
@@ -19,13 +21,17 @@ function AppRoutes() {
         <Route
           path="/dashboard"
           element={
-            <UserTechProvider>
+            <UserProvider>
               <ModalTechProvider>
-                <UserTechAddProvider>
-                  <Dashboard />
-                </UserTechAddProvider>
+                <UserEditProvider>
+                  <UserTechProvider>
+                    <UserTechAddProvider>
+                      <Dashboard />
+                    </UserTechAddProvider>
+                  </UserTechProvider>
+                </UserEditProvider>
               </ModalTechProvider>
-            </UserTechProvider>
+            </UserProvider>
           }
         />
         <Route path="*" element={<NotFoundPage />} />
