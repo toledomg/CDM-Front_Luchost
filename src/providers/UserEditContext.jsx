@@ -67,7 +67,7 @@ export const UserEditProvider = ({ children }) => {
       });
 
       if (data.password === "") {
-        delete data.password; // Remove o campo password do objeto updateData
+        delete data.password;
       }
 
       const emailRequisicao = response.data.email;
