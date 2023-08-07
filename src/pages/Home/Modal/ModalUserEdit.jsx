@@ -99,6 +99,15 @@ function ModalUserEdit() {
             {errors.email?.message}
 
             <InputDefer
+              label="Senha"
+              type="text"
+              id="password"
+              placeholder="Senha do Usuário"
+              {...register("password")}
+            />
+            {errors.password?.message}
+
+            <InputDefer
               label="Telefone"
               type="text"
               id="phone"

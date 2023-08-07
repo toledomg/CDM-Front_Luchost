@@ -66,6 +66,10 @@ export const UserEditProvider = ({ children }) => {
         },
       });
 
+      if (data.password === "") {
+        delete data.password; // Remove o campo password do objeto updateData
+      }
+
       const emailRequisicao = response.data.email;
 
       if (data.email === emailRequisicao) {
@@ -94,6 +98,8 @@ export const UserEditProvider = ({ children }) => {
             Authorization: `Bearer ${token}`,
           },
         });
+
+        console.log(updateResponse.data);
 
         setRenderUser([
           ...renderUser.filter((profile) => profile.id !== id),
