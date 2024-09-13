@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const localUrl = "http://localhost:3000";
-const deployUrl = "https://cdm-api.luchost.com/";
+const localUrl = process.env.REACT_APP_LOCAL_URL;
+const deployUrl = process.env.REACT_APP_DEPLOY_URL;
 export const api = axios.create({
-  baseURL: deployUrl,
+  baseURL: process.env.REACT_APP_URL,
   timeout: 25000,
 
   headers: {

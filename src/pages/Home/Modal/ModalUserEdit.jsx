@@ -19,7 +19,8 @@ import { ModalEditSchema } from "../../../Validators/Schema";
 function ModalUserEdit() {
   const { modalShowUserEdit, setShowModalEdit } = useContext(ModalTechContext);
 
-  const { user, attUser } = useContext(UserContext);
+  const { user, setUser, loading, setLoading, setAttUser, attUser } =
+    useContext(UserContext);
 
   const { userProfile, deleteUserProfile, editUserProfile } =
     useContext(UserEditContext);

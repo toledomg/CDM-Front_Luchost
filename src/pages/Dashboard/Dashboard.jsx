@@ -53,7 +53,6 @@ function Dashboard() {
     const token = JSON.parse(localStorage.getItem("@CDM-Token"));
     const decodedToken = jwtDecode(token);
     const id = decodedToken.sub;
-
     async function loadUser() {
       try {
         setLoading(true);
@@ -64,10 +63,6 @@ function Dashboard() {
         });
         setUser(response.data);
         setAttUser(response.data);
-        console.log(attUser);
-        Email = response.data.email;
-        Name =
-          response.data.name[0].toUpperCase() + response.data.name.substr(1);
       } catch (error) {
         console.error(error);
       } finally {
@@ -80,6 +75,7 @@ function Dashboard() {
   const exitPage = () => {
     localStorage.removeItem("@CDM-Token");
     localStorage.removeItem("@CDM-ID");
+    setUser(null);
     navigate("/");
   };
 

@@ -70,9 +70,7 @@ export const UserEditProvider = ({ children }) => {
         delete data.password;
       }
 
-      const emailRequisicao = response.data.email;
-
-      if (data.email === emailRequisicao) {
+      if (data.email === response.data.email) {
         const updateData = { ...data, email: undefined };
 
         const updateResponse = await api.patch(`users/${id}`, updateData, {
@@ -87,10 +85,12 @@ export const UserEditProvider = ({ children }) => {
         ]);
 
         setAttUser(updateResponse.data);
+        setUser(updateResponse.data);
+
         setShowModalUserEdit(false);
 
         toast.success(
-          `Perfil de ${updateResponse.data.name} foi atualizado com sucesso`
+          `${updateResponse.data.name} seu perfil foi atualizado com sucesso`
         );
       } else {
         const updateResponse = await api.patch(`users/${id}`, data, {
@@ -105,10 +105,14 @@ export const UserEditProvider = ({ children }) => {
           ...renderUser.filter((profile) => profile.id !== id),
           updateResponse.data,
         ]);
+
         setAttUser(updateResponse.data);
+        setUser(updateResponse.data);
+
         setShowModalUserEdit(false);
+
         toast.success(
-          `Perfil de ${updateResponse.data.name} foi atualizado com sucesso`
+          `${updateResponse.data.name} seu perfil foi atualizado com sucesso`
         );
       }
     } catch (error) {
