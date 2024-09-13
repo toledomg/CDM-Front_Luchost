@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const localUrl = process.env.REACT_APP_LOCAL_URL;
-const deployUrl = process.env.REACT_APP_DEPLOY_URL;
+const localUrl = import.meta.env.VITE_LOCAL_URL;
+const deployUrl = import.meta.env.VITE_DEPLOY_URL;
 export const api = axios.create({
-  baseURL: process.env.REACT_APP_URL,
+  baseURL: deployUrl,
   timeout: 25000,
 
   headers: {
